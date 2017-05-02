@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <button @click="show = !show">Show / Hide</button>
+    <p v-if="show">I'm part time visible!</p>
+    <p v-else>Am I visible?</p>
+    <p v-show="show">Hurray, here!</p>
+    <hr>
+    <ul>
+      <li v-for="(person, index) in persons">{{ person.name }} - {{ index }} - age {{ person.age }}</li>
+    </ul>
+  </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="main.js"></script>
+  </body>
+  </html>

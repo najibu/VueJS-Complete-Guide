@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+    <input type="text" v-on:input="cssClass = $event.target.value" />
+    <p :class="cssClass">Class: {{ cssClass }}</p>
+    <p><a :href="link">Google</a></p>
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <input type="text" v-on:input="writeTitle">
+    <button v-on:click="changeTitle">Change title</button>
+    <p>{{ title }}</p>
+    <p>{{ sayHello() }}</p>
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="main.js"></script>
+</body>
+</html>

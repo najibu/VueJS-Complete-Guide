@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+    <p v-html="finishedLink"> </p> <!-- it exposes you to cross site scripting attacks use carefully -->
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        finishedLink: '<a href="http://google.com">Google</a>'
+      }
+    })
+  </script>
+</body>
+</html>

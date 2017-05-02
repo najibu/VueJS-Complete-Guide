@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+   <button @click="counter++">Increase</button>
+   <button @click="counter--">Decrease</button>
+   <button @click="secondCounter++">Increase Second</button>
+   <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+   <p>Result: {{ result() }} | {{ output }}</p>
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        counter: 0,
+        secondCounter: 0
+      },
+      computed: {
+        output: function(){
+          console.log('computed');
+          return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+        }
+      },
+      methods: {
+        result: function(){
+          console.log('method');
+          return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

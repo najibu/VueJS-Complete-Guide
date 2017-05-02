@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+    <button @click="increase(2, $event)">Click me</button>
+    <button @click="counter++">Click me</button>
+    <p>{{ counter }}</p>
+    <p>{{ counter * 2 > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
+    <p @mousemove="updateCoordinates">
+      Coordinates: {{ x }} / {{ y }}
+      - <span @mousemove.stop="">DEAD SPOT</span>
+    </p>
+    <input type="text" @keyup.enter.space="alertMe">
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        counter: 0,
+        x: 0,
+        y: 0
+      },
+      methods: {
+        increase: function(num, event){
+          this.counter += num;
+        },
+        updateCoordinates: function(event){
+          this.x = event.clientX;
+          this.y = event.clientY;
+        }
+      },
+      alertMe: function(){
+        alert('Alert!');
+      }
+    })
+  </script>
+</body>
+</html>

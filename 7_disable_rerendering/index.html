@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+  <h1 v-once>{{ title }}</h1>
+  <p>{{ sayHello() }} - <a :href="link">Google</a></p>
+</div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        title: 'Hello world!',
+        link: 'http://google.com'
+      },
+      methods: {
+        changeTitle: function(event){
+          this.title = event.target.value;
+        },
+        sayHello: function(){
+          this.title = 'Hello!';
+          return this.title;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
