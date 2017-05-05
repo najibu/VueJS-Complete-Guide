@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+   <button @click="changeLink">Click to change link</button>
+   <a :href="link">Link</a>
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        link: 'http://google.com'
+      },
+      methods: {
+        changeLink: function() {
+          this.link = 'http://apple.com'
+        }
+      }
+    });
+  </script>
+</body>
+</html>
