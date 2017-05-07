@@ -7,7 +7,7 @@ You may know Angular 2 and ReactJS, well, VueJS combines the Best of both Framew
 
 Frontend Frameworks are extremely popular because they give us this reactive, great User Experience we know from Mobile Apps - but now in the Browser!
 
-##Contents
+## Contents
    1. What is VueJS and Why would you use it? <br>
    2. Setting up a Development Environment and Workflow <br>
    3. The Basics (including the basic Syntax, Understanding Templates and much more!) <br>
