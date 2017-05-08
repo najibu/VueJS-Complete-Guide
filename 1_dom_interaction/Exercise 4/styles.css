@@ -6,10 +6,30 @@
 
 .highlight {
   background-color: red;
-  width: 200px !important;
+  width: 200px;
 }
 
 .shrink {
   background-color: gray;
-  width: 50px !important;
+  width: 50px;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.float {
+  float: right;
+}
+.text-color {
+  color: yellow;
+}
+.visible {
+  width: 100px;
+  height: 50px;
+}
+.progress-bar {
+  width: 200px;
+  height: 20px;
+  border: 1px solid black;
 }
