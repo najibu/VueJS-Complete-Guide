@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+    <h1>{{ title }}</h1>
+    <button @click="title = 'Changed'">Upated Title</button>
+    <button @click="destroy">Destroy</button>
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+   new Vue({
+    el: '#app',
+    data: {
+      title: 'The VueJs Instace'
+    },
+    beforeCreate: function(){
+      console.log('beforeCreate()');
+    },
+    created: function(){
+      console.log('created()');
+    },
+    beforeMount: function(){
+      console.log('beforeMount()');
+    },
+    mounted: function(){
+      console.log('mounted()');
+    },
+    beforeUpdate: function(){
+      console.log('beforeUpdate()');
+    },
+    updated: function(){
+      console.log('updated()');
+    },
+    beforeDestory: function(){
+      console.log('beforeDestory()');
+    },
+    destroyed: function(){
+      console.log('destroyed()');
+    },
+    methods: {
+      destroy: function(){
+        this.$destroy;
+      }
+    }
+  });
+</script>
+</body>
+</html>

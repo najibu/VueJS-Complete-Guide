@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+    <h1 ref='heading'>{{ title }}</h1>
+    <button @click="show" ref="myButton">Show Paragraph</button>
+    <p v-if="showParagraph">This is not always visible</p>
+  </div>
+
+  <div id="app2">
+    <h1>{{ title }}</h1>
+    <button @click="onChange">Change something in Vue 1</button>
+    
+  </div>
+
+  <div id="app3">
+    
+  </div>
+
+  <div class="hello"></div>
+  <div class="hello"></div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    var data = {
+      title: 'The VueJs Instance',
+      showParagraph: false
+    }
+
+
+    var vm = new Vue({
+      data: data,
+      methods: {
+        show: function() {
+          this.showParagraph = true;
+          this.updateTitle('The VueJs Instance (Updated)')
+          this.$refs.myButton.innerText = 'Test';
+        },
+        updateTitle: function(title) {
+          this.title = title;
+        }
+      },
+      computed: {
+        lowercaseTitle: function() {
+          return this.title.toLowerCase();
+        }
+      },
+      watch: {
+        title: function(value) {
+          alert('Title changed, new value: ' + value);
+        }
+      }
+    });
+
+    vm.$mount('#app');
+
+    vm.newProp = 'New!';
+    console.log(vm);
+    console.log(vm.$data === data);
+    vm.$refs.heading.innerText = 'Something else';
+
+    setTimeout(function(){
+      vm.title = 'Changed by Timer';
+      vm.show();
+    }, 3000);
+
+    var vm2 = new Vue({
+      el: '#app2',
+      data: {
+        title: 'The Second Instance'
+      },
+      methods: {
+        onChange: function() {
+          vm.title = 'Changed!';
+        }
+      }
+    });
+
+    var vm3 = new Vue({
+      template: '<h1>Hello!</h1>'
+    });
+
+    vm3.$mount();
+    document.getElementById('app3').appendChild(vm3.$el);
+  </script>
+</body>
+</html>
