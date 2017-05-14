@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+   <my-cmp></my-cmp>
+   <hr>
+   <my-cmp></my-cmp>
+ </div>
+
+ <div id="app2">
+   <my-cmp></my-cmp>
+   <hr>
+   <my-cmp></my-cmp>
+ </div>
+
+
+ <script src="https://unpkg.com/vue"></script>
+ <script>
+    //var data =  {status: 'Critical'};
+
+// Gobal Vue.component({})
+//Locally
+var cmp = {
+  data: function(){
+   return {status: 'Critical'};
+ },
+ template: '<p>Server Status: {{ status }} (<button @click="changeStatus">Change</button>)</p>',
+ methods: {
+  changeStatus: function(){
+    this.status = 'Normal';
+  }
+}
+};
+
+new Vue({
+  el: '#app',
+  components: {
+    'my-cmp': cmp
+  }
+});
+
+new Vue({
+  el: '#app2'
+});
+</script>
+</body>
+</html>
