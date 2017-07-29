@@ -6,7 +6,6 @@
   >
     Server #{{ server.id }}
   </li>
-</div>
 </template>
 
 <script>
